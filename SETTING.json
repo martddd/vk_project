@@ -3,12 +3,12 @@
     "user_id":"14937004",
     "login":"medov-artem@mail.ru",
     "password":"leavemealone_291089_vkontakte",
-    "token":"32f18d3806ce46b1416c5b9bdadfe15d0b2a1a1e711adf942df6cc4e8395401df4b96e8c5f3c8512bdef8"
+    "token":"c6c1113c5186efd0e4bc030f8238e5362458becfdf2b0b5e18e7cb7cf8cc4bf15d5a35d906d4a4a62bcca"
   },
   "app":{
     "api_url":"https://api.vk.com/method/",
     "APP_ID":"5857160",
-    "SETTINGS":"wall,messages,friends",
+    "SETTINGS":"groups,messages,friends",
     "RESPONESE_TYPE":"token",
     "REDIRECT_URI":"http://oauth.vk.com/blank.html",
     "DISPLAY":"popup"
