@@ -20,14 +20,11 @@ user_id_msg = '14937004'
 msg = 'Сообщение'
 
 
-def choice_method(id_method):
-    methods = {
+methods = {
         "9" : "friends",
-        "11" : "groups.get",
+        "11" : "groups.getById",
         "15" : "messages",
     }
-    method = methods[id_method]
-    return method
 
 
 def vk_friends():
@@ -45,10 +42,17 @@ def vk_messages_send():
 
 
 def vk_groups_get(id_method):
-    url_request = '%s%s?user_id=%s&count=%d&access_token=%s&v=5.62' % (API_URL, choice_method('11'), user_id, 10, TOKEN)
+    url_request = '%s%s?user_id=%s&count=%d&access_token=%s&v=5.62' % (API_URL, methods[id_method], user_id, 10, TOKEN)
     r = requests.get(url_request)
     json_r = json.loads(r.text)
     return json_r['response']['items']
+
+
+def vk_groups_getById(id_method, id_groups):
+    url_request = '%s%s?group_ids=%s&access_token=%s&v=5.62' % (API_URL, methods[id_method], id_groups, TOKEN)
+    r = requests.get(url_request)
+    json_r = json.loads(r.text)
+    return json_r
 
 
 def parse_json(json_list):
@@ -75,4 +79,4 @@ def parse_json(json_list):
 # print(parse_json(vk_friends()))
 # print(vk_req())
 # print(vk_messages_send())
-print(vk_groups_get('11'))
+print(vk_groups_getById('11', '20833574'))
